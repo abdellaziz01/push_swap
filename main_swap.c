@@ -3,13 +3,6 @@
  
 int main(int argc , char **argv)
 {
-  
-  
-  
-  
- 
-    printf("Hello World");
- 
     if(argc == 1)
         return 0;
     if(check(argc , argv) == -1 || check_dup(argc , argv) == -1)
@@ -17,8 +10,9 @@ int main(int argc , char **argv)
         write(2,"Error\n",6);
         return 0;
     }
- 
-    return 0;
-
-
+    stack_a *head1;
+    stack_b *head2;
+    head1 = NULL;
+    head2 = NULL;
+    
 }

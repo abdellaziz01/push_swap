@@ -8,7 +8,7 @@ long ft_atoi(char *str)
     res = 0;
     kayn = 1;
     i = 0;
-    while(str[i] == 32 ||  (str[i] >= 9 && str[i] <= 13) && str[i] != '\0')
+    while(str[i] == 32 ||  ((str[i] >= 9 && str[i] <= 13) && str[i] != '\0'))
         i++;
     if(str[i] == '-' || str[i] == '+')
     {

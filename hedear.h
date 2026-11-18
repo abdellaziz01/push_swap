@@ -1,11 +1,17 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef HEDEAR_H
+#define HEDEAR_H
+ 
 #include <unistd.h>
-
-typedef struct stack_a{
+#include <stdlib.h>
+typedef struct list_a{
     int nb;
-    struct  stack_a *next;
-}t_popo;
+    struct list_a* next;
+}stack_a;
+ 
+typedef struct list_b{
+    int nb;
+    struct  list_b* next;
+}stack_b;
 
 int check(int nb , char **str);
 long ft_atoi(char *str);
