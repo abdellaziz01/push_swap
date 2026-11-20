@@ -1,13 +1,13 @@
 #include "../hedear.h"
-int check(int nb , char **str)
+int check(int argc , char **argv)
 {
-    if(nb == 1)
+    if(argc == 1)
         return 0;
     int i;
     i = 1;
-    while(i < nb)
+    while(i < argc)
     {
-        if(is_intger(str[i]) == -1)
+        if(is_intger(argv[i]) == -1)
             return -1;
         i++;
     }

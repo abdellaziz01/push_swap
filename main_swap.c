@@ -10,9 +10,6 @@ int main(int argc , char **argv)
         write(2,"Error\n",6);
         return 0;
     }
-    stack_a *head1;
-    stack_b *head2;
-    head1 = NULL;
-    head2 = NULL;
-    
+    stack *s_a;
+    stack *s_b;
 }
