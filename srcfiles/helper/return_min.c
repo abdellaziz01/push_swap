@@ -1,6 +1,6 @@
-#include "../hedear.h"
+#include "hedear.h"
 
-int check_MIN (stack *S_a)
+static int check_MIN (stack *S_a)
 {
     stack *temp1;
     temp1 = S_a;
@@ -12,10 +12,9 @@ int check_MIN (stack *S_a)
             MIN = temp1 -> nb;  
         temp1 = temp1 -> next;
     }
-
     return MIN;
 }
-stack *check_node (stack *head)
+stack *return_min(stack *head)
 {
     if (!head)
         return NULL;  

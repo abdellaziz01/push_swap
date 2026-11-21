@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 int is_intger(char *str)
 {
     long nb = ft_atoi(str);

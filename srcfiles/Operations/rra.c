@@ -1,5 +1,5 @@
-#include "../hedear.h"
-stack	*last_node(stack *s_a)
+#include "hedear.h"
+static stack	*last_node(stack *s_a)
 {
 	if (!s_a)
 		return (NULL);
@@ -7,7 +7,7 @@ stack	*last_node(stack *s_a)
 		s_a = s_a->next;
 	return (s_a);
 }
-stack	*llast_node(stack *s_a)
+static stack	*llast_node(stack *s_a)
 {
     stack *last;
     last = last_node(s_a);
@@ -28,6 +28,7 @@ void rra(stack **s_a)
     last1 -> next = (*s_a);
     (*s_a) = last1;
     last2 -> next = NULL;
+    ft_putstr("rra\n");
      
 }
 // #include <stdio.h>

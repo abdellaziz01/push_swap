@@ -20,9 +20,13 @@ void rb(stack **head);
 void rr(stack **head , stack **head1);
 void rra(stack **head);
 void rrb(stack **head);
-void rrr(stack *head , stack *head1);
+void rrr(stack **head , stack **head1);
 void sa(stack **head);
 void sb(stack **head);
 void ss(stack **head , stack **head1);
 int is_sorted(stack *head);
+stack *return_min(stack *head);
+void ft_putstr(char *str);
+int count_nodes(stack *head);
+int index_min(stack *head);
 #endif

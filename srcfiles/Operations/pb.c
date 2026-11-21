@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 void pb(stack **a_b , stack **s_a)
 {
     stack *temp;
@@ -8,4 +8,5 @@ void pb(stack **a_b , stack **s_a)
     *(s_a) = (*s_a) -> next;
     temp -> next = (*a_b);
     *(a_b) = temp;
+    ft_putstr("pb\n");
 }

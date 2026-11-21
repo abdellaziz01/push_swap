@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 int check(int argc , char **argv)
 {
     if(argc == 1)

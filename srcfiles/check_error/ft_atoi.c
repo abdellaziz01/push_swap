@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 long ft_atoi(char *str)
 {
     int i;

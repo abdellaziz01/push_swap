@@ -1,5 +1,5 @@
-#include "../hedear.h"
-stack	*last_node(stack *s_b)
+#include "hedear.h"
+static stack	*last_node(stack *s_b)
 {
 	if (!s_b)
 		return (NULL);
@@ -21,4 +21,5 @@ void rb(stack **s_b)
     last -> next = end;
     end -> next = NULL;
     (*s_b) = second;
+    ft_putstr("rb\n");
 }

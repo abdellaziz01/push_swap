@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 int is_sorted(stack *head)
 {
     while(head && head -> next)

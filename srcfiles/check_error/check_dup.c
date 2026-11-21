@@ -1,4 +1,4 @@
-#include "../hedear.h"
+#include "hedear.h"
 int check_dup(int argc , char **argv)
 {
     int arr[argc - 1];
