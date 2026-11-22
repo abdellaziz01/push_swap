@@ -5,7 +5,7 @@ int index_min(stack *head)
     int index;
     min_node = return_min(head);
     index = 0;
-    while(head -> next != min_node)
+    while(head &&  head != min_node)
     {
         index++;
         head = head -> next;

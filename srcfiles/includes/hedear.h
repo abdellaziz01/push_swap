@@ -29,4 +29,13 @@ stack *return_min(stack *head);
 void ft_putstr(char *str);
 int count_nodes(stack *head);
 int index_min(stack *head);
+void simple_algo(stack **s_a , stack **s_b);
+void sort_three(stack **head);
+void  sort_two(stack **head);
+void simple_algo(stack **s_a , stack **s_b);
+stack	*ft_lstnew(int n);
+stack	*ft_lstlast(stack *lst);
+void	ft_lstadd_back(stack **lst, stack *new);
+stack *return_nodes(int argc , char **argv );
+int main(int argc , char **argv);
 #endif

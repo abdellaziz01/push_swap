@@ -21,5 +21,4 @@ void ra(stack **s_a)
     last -> next = end;
     end -> next = NULL;
     (*s_a) = second;
-    ft_putstr("ra\n");
 }

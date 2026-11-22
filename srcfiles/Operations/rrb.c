@@ -1,4 +1,4 @@
-#include "hedear.h"                     
+#include "hedear.h"                    
 static stack	*last_node(stack *s_b)           
 {                                         
                                           
@@ -32,6 +32,5 @@ void rrb(stack **s_b)
    last2 = llast_node(*s_b);             
    last1 -> next = (*s_b);               
    (*s_b) = last1;                       
-   last2 -> next = NULL;     
-   ft_putstr("rrb\n");                                                  
+   last2 -> next = NULL;                                                    
 }      

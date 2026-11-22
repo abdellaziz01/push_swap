@@ -1,12 +1,12 @@
 #include "hedear.h"
 int count_nodes(stack *head)
 {
-    int res;
-    res = 0;
+    int count;
+    count = 0;
     while(head)
     {
-        res++;
+        count++;
         head = head -> next;
     }
-    return res;
+    return count;
 }

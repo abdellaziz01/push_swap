@@ -21,5 +21,4 @@ void rb(stack **s_b)
     last -> next = end;
     end -> next = NULL;
     (*s_b) = second;
-    ft_putstr("rb\n");
 }

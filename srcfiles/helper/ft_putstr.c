@@ -1,6 +1,6 @@
 #include "hedear.h"
-void ft_putstr(char *string)
+void ft_putstr(char *str)
 {
-    while(*string)
-        write(1,string++,1);
+    while(*str)
+        write(1,str++,1);
 }

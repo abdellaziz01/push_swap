@@ -28,7 +28,6 @@ void rra(stack **s_a)
     last1 -> next = (*s_a);
     (*s_a) = last1;
     last2 -> next = NULL;
-    ft_putstr("rra\n");
      
 }
 // #include <stdio.h>

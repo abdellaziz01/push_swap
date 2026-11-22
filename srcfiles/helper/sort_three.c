@@ -1,9 +1,12 @@
 #include "hedear.h"
-void swap_h(stack **head)
+static void swap_h(stack **head)
 {
     rra(head);
+    ft_putstr("rra\n");
     sa(head);
+    ft_putstr("sa\n");
 }
+
 void sort_three(stack **head)
 {
     stack *start;
@@ -20,13 +23,20 @@ void sort_three(stack **head)
     else 
     {
         if(second == min)
+        {
             ra(head);
+            ft_putstr("ra\n");
+        }
         else
+        {
             rra(head);
+            ft_putstr("rra\n");
+        }
         if(is_sorted((*head) -> next) == 0)
             swap_h(head);
     }
 }
+
 
 // #include <stdio.h>
 // int main()

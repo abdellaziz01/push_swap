@@ -9,5 +9,8 @@ void  sort_two(stack **head)
     if(is_sorted(*head) == 1)
         return ;
     if(start != min)
+    {
         sa(head);
+        ft_putstr("sa\n");
+    }
 }
