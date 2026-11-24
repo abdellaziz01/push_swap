@@ -1,0 +1,43 @@
+  
+ #include "hedear.h"
+
+void swap(int *a , int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int partition(int *arr , int lb , int ub)
+{
+    int pivot ;
+    int start;
+    int end;
+
+    start = lb;
+    end = ub;
+    pivot = arr[lb];
+    while(start < end)
+    {
+        while (start <= ub && arr[start] <= pivot)
+            start++;
+        while (end > lb && arr[end] > pivot)
+            end--;
+        if(start < end)
+            swap(&arr[start] , &arr[end]);
+    }
+    swap(&arr[lb] , &arr[end]);
+    return end;
+}
+void quick_sort(int *arr , int lb , int ub)
+{   
+    if(lb < ub)
+    {
+        int loc;
+        loc = partition(arr , lb , ub);
+        quick_sort(arr , lb , loc - 1);
+        quick_sort(arr , loc + 1 , ub);
+    }
+}
+ 
+ 

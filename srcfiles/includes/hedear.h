@@ -5,6 +5,7 @@
 #include <stdlib.h>
 typedef struct list{
     int nb;
+    int index;
     struct list *next;
 }stack;
  
@@ -33,6 +34,7 @@ void simple_algo(stack **s_a , stack **s_b);
 void sort_three(stack **head);
 void  sort_two(stack **head);
 void simple_algo(stack **s_a , stack **s_b);
+void quick_sort(void **head , int lb , int ub);
 stack	*ft_lstnew(int n);
 stack	*ft_lstlast(stack *lst);
 void	ft_lstadd_back(stack **lst, stack *new);

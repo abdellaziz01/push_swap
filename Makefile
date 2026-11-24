@@ -26,10 +26,12 @@ SRCES = $(SRCF)/check_error/check.c \
 		$(SRCF)/helper/index_min.c \
 		$(SRCF)/helper/count_nodes.c \
 		$(SRCF)/helper/sort_three.c \
+		$(SRCF)/helper/compute_disorder.c \
 		$(SRCF)/helper/sort_two.c \
 		$(SRCF)/helper/is_sorted.c \
 		$(SRCF)/helper/ft_putstr.c \
 		$(SRCF)/strategies/Algo_simple/simple.c \
+		$(SRCF)/strategies/Algo_complex/complex.c \
 		$(SRCF)/create_nodes/ft_lstadd_back.c \
 		$(SRCF)/create_nodes/ft_lstnew.c \
 		$(SRCF)/create_nodes/ft_lstlast.c \

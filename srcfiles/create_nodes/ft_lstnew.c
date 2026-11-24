@@ -7,6 +7,7 @@ stack	*ft_lstnew(int n)
 	if (!new)
 		return (NULL);
 	new-> nb = n;
+	new -> index = 0;
 	new->next = NULL;
 	return (new);
 }
