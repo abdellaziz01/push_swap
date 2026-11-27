@@ -1,120 +1,103 @@
-#include "hedear.h"
 #include <stdio.h>
-
-stack *node_index(stack *head , int index )
+#include "hedear.h"
+static void geve_index(stack **s_a)
 {
-    while(head && head -> index != index)
-        head = head -> next;
-    return head;
-
-}
-void get_index(stack *head)
-{
-    int index;
-    stack *list1;
-    stack *list2;
-    list1 = head;
-    while(list1)
-    {
-        index = 0;
-        list2 = list1;
-        while(list2)
-        {
-            if(list2 -> nb < list1 -> nb)
-                index++;
-            list2 = list2 -> next;
-        }
-        list1 -> index = index;
-        list1 = list1 -> next;
-    }
-}
-static void shift_all(stack **s_a , int index , int nb)
-{
-    if(index <= (nb / 2))
-    {
-        while(index > 0)
-        {
-            ra(s_a);
-            ft_putstr("ra\n");
-            index--;
-        }
-    }
-    else
-    {
-        index = nb - index ;
-        while(index > 0)
-        {
-            rra(s_a);
-            ft_putstr("rra\n");
-            index--;
-        }
-    }  
+	int index;
+	stack *node1;
+	stack *node2;
+	node1 = (*s_a);
+	while(node1)
+	{
+		index = 0;
+		node2 = (*s_a);
+		while(node2)
+		{
+			if(node1 -> nb > node2 -> nb)
+				index++;
+			node2 = node2 -> next;
+		}
+		node1 -> index = index;
+		node1 = node1 -> next;
+	}
 }
  
-int partition(stack **head , stack **head1, int lb , int ub)
+static int great_index(stack *s_a)
 {
-    int pivot ;
-    int start;
-    int end;
+	int max;
+	stack *node1;
 
-    start = lb;
-    end = ub;
-    pivot =  (*head) -> index;
-    while(start < end)
-    {
-        while (start <= ub && node_index(*head , start) -> index <= pivot)
-            start++;
-        while (end > lb && node_index(*head , end) > pivot)
-            end--;
-        if(start < end)
-        {
-            shift_all(head , node_index(*head , start) ,ub + 1);
-            pb(head , head1);
-            shift_all(head , node_index(*head , end) ,ub + 1);
-            pa(head , head1);
-        }
-             
-    }
-    shift_all(head , node_index(*head , start) ,ub + 1);
-    pb(head , head1);
-    shift_all(head , node_index(*head , end) ,ub + 1);
-    pa(head , head1);
-    return end;
+	max = s_a -> index;
+	node1 =  s_a;
+	while (node1)
+	{
+ 		if(max < node1 -> index)	
+			max = node1 -> index;
+		node1 = node1-> next;
+	}
+	return max;
 }
-void quick_sort(void **head , int lb , int ub)
-{   
-    if(lb < ub)
-    {
-        int loc;
-        loc = partition(head , lb , ub);
-        quick_sort(head , lb , loc - 1);
-        quick_sort(head , loc + 1 , ub);
-    }
-}
- 
-int	main(void)
+static int decimal_to_b(int nb)
 {
-	stack	*n1;
-	stack	*n2;
-	stack	*n3;
-	stack	*n4;
-	stack	*n5;
-	stack	*s_a;
-
-	n1 = ft_lstnew(7);
-	n2 = ft_lstnew(6);
-	n3 = ft_lstnew(10);
-	n4 = ft_lstnew(5);
-	n5 = ft_lstnew(9);
-	n1->next = n2;
-	n2->next = n3;
-	n3->next = n4;
-	n4->next = n5;
-	 quick_sort(n1 , 0 , 4);
-     while(n1)
-     {
-        printf("%d ",n1 -> nb);
-        n1 = n1 -> next;
-     }
-	return (0);
+	int res;
+	res = 0;
+	while(nb > 0)
+	{
+		res = res  * 10 + (nb % 2);
+		nb = nb / 2;
+	}
+	return res;
+}
+static int call_f(int res)
+{
+	int call;
+	call = 0;
+	while(res > 9)
+	{
+		call++;
+		res /=10;
+	}
+	return call + 1;
+}
+void radix_sort(stack **s_a , stack **s_b)
+{
+	geve_index(s_a);
+	int call;
+	call = call_f(decimal_to_b((great_index((*s_a)))));
+	 
+	int i;
+	int j;
+	int x;
+	int size;
+	size = count_nodes(*s_a);
+	i = 0;
+	while(i < call)
+	{
+		x = 0;
+		j = 0;
+		while(j < size)
+		{
+			int nb;
+			nb = (*s_a) -> index; 
+			 
+			if(((nb >> i) & 1) == 0)
+			{
+				pb(s_a , s_b);
+				x++;
+				ft_putstr("pb\n");
+			}
+			else
+			{
+				ra(s_a);
+				ft_putstr("ra\n");
+			}
+			j++;
+		}
+		while(x > 0)
+		{
+			pa(s_a , s_b);
+			x--;
+		}
+		i++;
+	}
+	
 }

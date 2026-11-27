@@ -34,7 +34,7 @@ void simple_algo(stack **s_a , stack **s_b);
 void sort_three(stack **head);
 void  sort_two(stack **head);
 void simple_algo(stack **s_a , stack **s_b);
-void quick_sort(void **head , int lb , int ub);
+void radix_sort(stack **s_a , stack **s_b);
 stack	*ft_lstnew(int n);
 stack	*ft_lstlast(stack *lst);
 void	ft_lstadd_back(stack **lst, stack *new);

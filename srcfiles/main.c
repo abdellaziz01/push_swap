@@ -18,7 +18,7 @@ int main(int argc , char **argv)
     stack *s_b;
     s_b = NULL;
     s_a =  return_nodes(argc ,argv);
-    quick_sort(&s_a , 0 , argc - 1);
+    simple_algo(&s_a , &s_b);
     while(s_a)
     {
         printf("%d\n",s_a -> nb);
@@ -26,3 +26,5 @@ int main(int argc , char **argv)
     }
      return 0;
 }
+
+ 
